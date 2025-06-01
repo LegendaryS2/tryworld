@@ -8,7 +8,6 @@ resizeCanvas(); // 初始設定
 window.addEventListener("resize", resizeCanvas);
 
 const ctx = myCanvas.getContext("2d");
-
 // 直接每次都讀取 saves/yuntech.world
 fetch('saves/yuntech.world')
   .then(response => response.text())
@@ -81,7 +80,10 @@ function startMain(worldInfo) {
   let oldGraphHash = graph.hash(); 
   animate();
 
+  viewport.setFollowTarget(myCar); 
+
   function animate() {
+    viewport.updateFollowOffset(); 
     viewport.reset();
     if (graph.hash() !== oldGraphHash) {
       world.generate();
@@ -246,7 +248,7 @@ function startMain(worldInfo) {
         console.log("bias2", car.brain.bias2, "bias3", car.brain.bias3);
       } else {
         carPaused = false;
-        if (lastTarget) {
+        if (window.lastTarget) {
           console.log("🔄 恢復前往目標：", lastTarget);
           setTargetFromCar(lastTarget.x, lastTarget.y);
         }
@@ -330,9 +332,11 @@ function startMain(worldInfo) {
     graphEditor.end = end;
     for (let i = 0; i < cars.length; i++) {
       cars[i].setEndPoint(end);
+      cars[i].stopped = false;
     }
     world.generateCorridor(start, end);
     roadBorders = world.corridor.map((s) => [s.p1, s.p2]);
+
     console.log(
       `🚗 新目標設定：從 (${start.x}, ${start.y}) 到 (${end.x}, ${end.y})`
     );
