@@ -1,6 +1,12 @@
 const myCanvas = document.getElementById("myCanvas");
-myCanvas.width = 600;
-myCanvas.height = 600;
+
+function resizeCanvas() {
+  myCanvas.width = window.innerWidth;
+  myCanvas.height = window.innerHeight;
+}
+resizeCanvas(); // 初始設定
+window.addEventListener("resize", resizeCanvas);
+
 const ctx = myCanvas.getContext("2d");
 
 // 直接每次都讀取 saves/yuntech.world
