@@ -17,52 +17,52 @@ class Building {
       switch (b.id) {
          case 31:
             b.img = new Image();
-            b.img.src = "js/items/img/31.png";
+            b.img.src = "../js/items/img/31.png";
             b.imgScaler = 1.5;
             b.imgOffset = new Point(-300, 0);
             b.img.onload = () => { if (window.requestAnimationFrame) window.requestAnimationFrame(()=>{}); };
             break;
          case 12:
             b.img = new Image();
-            b.img.src = "js/items/img/12.png";
+            b.img.src = "../js/items/img/12.png";
             b.imgScaler = 2;
             b.imgOffset = new Point(-220, 0);
             b.img.onload = () => { if (window.requestAnimationFrame) window.requestAnimationFrame(()=>{}); };
             break;
          case 32:
             b.img = new Image();
-            b.img.src = "js/items/img/32.png";
+            b.img.src = "../js/items/img/32.png";
             b.imgScaler = 2;
             b.imgOffset = new Point(-125, 0);
             b.img.onload = () => { if (window.requestAnimationFrame) window.requestAnimationFrame(()=>{}); };
             break;       
          case 33:
             b.img = new Image();
-            b.img.src = "js/items/img/33.png";
+            b.img.src = "../js/items/img/33.png";
             b.imgScaler = 1.5;
             b.imgOffset = new Point(150, 0);
 
             b.img2 = new Image();
-            b.img2.src = "js/items/img/332.png";
+            b.img2.src = "../js/items/img/332.png";
             b.img2Scaler = 1;
             b.img2Offset = new Point(-400, 50);
             b.img.onload = () => { if (window.requestAnimationFrame) window.requestAnimationFrame(()=>{}); };
             break;
          case 34:
             b.img = new Image();
-            b.img.src = "js/items/img/34.png";
+            b.img.src = "../js/items/img/34.png";
             b.imgScaler = 1.5;
             b.imgOffset = new Point(50, 0);
             b.img.onload = () => { if (window.requestAnimationFrame) window.requestAnimationFrame(()=>{}); };
             break;
          case 35:
             b.img = new Image();
-            b.img.src = "js/items/img/35.png";
+            b.img.src = "../js/items/img/35.png";
             b.imgScaler = 1.5;
             b.imgOffset = new Point(100, -200);
 
             b.img2 = new Image();
-            b.img2.src = "js/items/img/351.png";
+            b.img2.src = "../js/items/img/351.png";
             b.img2Scaler = 1.5   ;
             b.img2Offset = new Point(50, 400);
             b.img.onload = () => { if (window.requestAnimationFrame) window.requestAnimationFrame(()=>{}); };

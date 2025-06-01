@@ -57,3 +57,26 @@ label[for="mapSelect"] {
   padding: 5px;
   border-radius: 6px;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* 在背景層 */
+}
+
+#controls {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 500; /* 在畫面上層，可互動 */
+  background: rgba(255, 255, 255, 0.8); /* 可加透明背景 */
+  padding: 10px;
+  border-radius: 8px;
+}

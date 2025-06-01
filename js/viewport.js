@@ -78,4 +78,15 @@ class Viewport {
       this.zoom += dir * step;
       this.zoom = Math.max(1, Math.min(5, this.zoom));
    }
+
+   setFollowTarget(target) {
+      this.followTarget = target; // target 應是具有 x, y 屬性的物件，例如 myCar
+   }
+
+   updateFollowOffset() {
+   if (!this.followTarget) return;
+
+   // 計算 offset，使畫面中心對準 followTarget
+   this.offset = scale(new Point(this.followTarget.x, this.followTarget.y), -1);
+   }
 }
